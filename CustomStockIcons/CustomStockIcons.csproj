@@ -1,0 +1,86 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\char_alien.png" />
+    <None Remove="Resources\char_apple.png" />
+    <None Remove="Resources\char_athlete.png" />
+    <None Remove="Resources\char_chimera.png" />
+    <None Remove="Resources\char_clay.png" />
+    <None Remove="Resources\char_diver.png" />
+    <None Remove="Resources\char_duo.png" />
+    <None Remove="Resources\char_goth.png" />
+    <None Remove="Resources\char_hero.png" />
+    <None Remove="Resources\char_kite.png" />
+    <None Remove="Resources\char_mascot.png" />
+    <None Remove="Resources\char_moon.png" />
+    <None Remove="Resources\char_narrator.png" />
+    <None Remove="Resources\char_pizza.png" />
+    <None Remove="Resources\char_plasma.png" />
+    <None Remove="Resources\char_rascal.png" />
+    <None Remove="Resources\char_reporter.png" />
+    <None Remove="Resources\char_rival.png" />
+    <None Remove="Resources\char_snake.png" />
+    <None Remove="Resources\char_star.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\char_alien.png" />
+    <EmbeddedResource Include="Resources\char_apple.png" />
+    <EmbeddedResource Include="Resources\char_athlete.png" />
+    <EmbeddedResource Include="Resources\char_chimera.png" />
+    <EmbeddedResource Include="Resources\char_clay.png" />
+    <EmbeddedResource Include="Resources\char_diver.png" />
+    <EmbeddedResource Include="Resources\char_duo.png" />
+    <EmbeddedResource Include="Resources\char_goth.png" />
+    <EmbeddedResource Include="Resources\char_hero.png" />
+    <EmbeddedResource Include="Resources\char_kite.png" />
+    <EmbeddedResource Include="Resources\char_mascot.png" />
+    <EmbeddedResource Include="Resources\char_moon.png" />
+    <EmbeddedResource Include="Resources\char_narrator.png" />
+    <EmbeddedResource Include="Resources\char_pizza.png" />
+    <EmbeddedResource Include="Resources\char_plasma.png" />
+    <EmbeddedResource Include="Resources\char_rascal.png" />
+    <EmbeddedResource Include="Resources\char_reporter.png" />
+    <EmbeddedResource Include="Resources\char_rival.png" />
+    <EmbeddedResource Include="Resources\char_snake.png" />
+    <EmbeddedResource Include="Resources\char_star.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>Refs\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>Refs\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="BepInEx">
+      <HintPath>Refs\BepInEx.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>Refs\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>Refs\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule">
+      <HintPath>Refs\UnityEngine.ImageConversionModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Refs\UnityEngine.UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Patches\" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="if $(ConfigurationName) == Debug (&#xD;&#xA;copy /Y &quot;$(TargetPath)&quot; &quot;C:\Program Files\Steam\steamapps\common\Nickelodeon All-Star Brawl\BepInEx\plugins&quot;&#xD;&#xA;)" />
+  </Target>
+
+</Project>
