@@ -42,13 +42,16 @@ namespace CustomStockIcons.Managers
             stopwatch.Stop();
             Plugin.LogInfo($"Loaded {iconDict.Keys.Count} icon{(iconDict.Keys.Count == 1 ? "" : "s")} in {stopwatch.ElapsedMilliseconds} ms.");
 
-            foreach (var characterId in Constants.characterIds)
+            if (!Plugin.useVanillaIcons.Value)
             {
-                if (!iconDict.TryGetValue(characterId, out _))
+                foreach (var characterId in Constants.characterIds)
                 {
-                    var resourcePath = $"CustomStockIcons.Resources.{characterId}.png";
-                    var texture = LoadImageFromEmbeddedResource(resourcePath);
-                    iconDict.Add(characterId, texture);
+                    if (!iconDict.TryGetValue(characterId, out _))
+                    {
+                        var resourcePath = $"CustomStockIcons.Resources.{characterId}.png";
+                        var texture = LoadImageFromEmbeddedResource(resourcePath);
+                        iconDict.Add(characterId, texture);
+                    }
                 }
             }
         }
@@ -74,7 +77,7 @@ namespace CustomStockIcons.Managers
 
         static Texture2D LoadImageFromEmbeddedResource(string path)
         {
-            Texture2D image = new Texture2D(4, 4);
+            Texture2D image = new Texture2D(2, 2);
 
             var assembly = Assembly.GetExecutingAssembly();
             using (var stream = assembly.GetManifestResourceStream(path))

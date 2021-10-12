@@ -1,11 +1,11 @@
 ﻿using CustomStockIcons.Managers;
+using CustomStockIcons.Utilities;
 using HarmonyLib;
 using Nick;
+using System.Collections;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
-using CustomStockIcons.Utilities;
-using System.Collections;
 
 namespace CustomStockIcons.Patches
 {

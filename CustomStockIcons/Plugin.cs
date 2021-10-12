@@ -2,6 +2,7 @@
 using BepInEx.Logging;
 using CustomStockIcons.Managers;
 using HarmonyLib;
+using BepInEx.Configuration;
 
 namespace CustomStockIcons
 {
@@ -9,6 +10,7 @@ namespace CustomStockIcons
     public class Plugin : BaseUnityPlugin
     {
         internal static Plugin Instance;
+        internal static ConfigEntry<bool> useVanillaIcons;
 
         void Awake()
         {
@@ -18,6 +20,8 @@ namespace CustomStockIcons
                 return;
             }
             Instance = this;
+
+            useVanillaIcons = Config.Bind<bool>("Options", "Use Vanilla Icons", false, "Use the default heart icons instead of customized defaults.\nThis only applies if an icon is not found for a character.");
 
             IconManager.Init();
 
