@@ -25,9 +25,9 @@ jobs:
       shell: bash
       run: |
         find "CustomStockIcons/bin/Release/netstandard2.0" -type f ! -name "CustomStockIcons.dll" -delete
-        cp "LICENSE" "CustomStockIcons/bin/Release/netstandard2.0/LICENSE.VoiceMod.txt"
+        cp "LICENSE" "CustomStockIcons/bin/Release/netstandard2.0/LICENSE.CustomStockIcons.txt"
         cp "README.md" "CustomStockIcons/bin/Release/netstandard2.0/README.md"
-        cp -a "CustomStockIcons/Resources/." "NASB Voice Mod/bin/Release/netstandard2.0/"
+        cp -a "CustomStockIcons/External/." "CustomStockIcons/bin/Release/netstandard2.0/"
         rm "CustomStockIcons/bin/Release/netstandard2.0/Preview.png"
 
     - name: Extract Release Version
@@ -55,4 +55,4 @@ jobs:
         name: CustomStockIcons v${{ steps.get_version.outputs.version }}
         files: |
           CustomStockIcons-${{ steps.get_version.outputs.version }}.zip
-          CustomStockIcons/bin/Release/netstandard2.0/VoiceMod.dll
+          CustomStockIcons/bin/Release/netstandard2.0/CustomStockIcons.dll
