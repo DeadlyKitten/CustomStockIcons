@@ -1,0 +1,58 @@
+name: .NET Build
+on:
+  push:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Setup msbuild
+      uses: microsoft/setup-msbuild@v1.0.2
+
+    - name: Install dependencies
+      run: msbuild -t:restore
+
+    - name: Build project
+      run: msbuild "CustomStockIcons/CustomStockIcons.csproj" /t:Build /p:Configuration=Release
+
+    - name: Prepare release files
+      shell: bash
+      run: |
+        find "CustomStockIcons/bin/Release/netstandard2.0" -type f ! -name "CustomStockIcons.dll" -delete
+        cp "LICENSE" "CustomStockIcons/bin/Release/netstandard2.0/LICENSE.VoiceMod.txt"
+        cp "README.md" "CustomStockIcons/bin/Release/netstandard2.0/README.md"
+        cp -a "CustomStockIcons/Resources/." "NASB Voice Mod/bin/Release/netstandard2.0/"
+        rm "CustomStockIcons/bin/Release/netstandard2.0/Preview.png"
+
+    - name: Extract Release Version
+      if: startsWith(github.ref, 'refs/tags/')
+      id: get_version
+      shell: bash
+      run: echo ::set-output name=version::${GITHUB_REF#refs/tags/v}
+
+    - name: Prepare zip
+      run: 7z a -tzip CustomStockIcons-${{ steps.get_version.outputs.version }}.zip "./CustomStockIcons/bin/Release/netstandard2.0/*"
+
+    - name: Upload Build
+      if: startsWith(github.ref, 'refs/tags/') == false
+      uses: actions/upload-artifact@v2
+      with:
+        name: CustomStockIcons-${{ github.sha }}
+        path: CustomStockIcons-${{ steps.get_version.outputs.version }}.zip
+
+    - name: Release
+      if: startsWith(github.ref, 'refs/tags/')
+      uses: softprops/action-gh-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        name: CustomStockIcons v${{ steps.get_version.outputs.version }}
+        files: |
+          CustomStockIcons-${{ steps.get_version.outputs.version }}.zip
+          CustomStockIcons/bin/Release/netstandard2.0/VoiceMod.dll
