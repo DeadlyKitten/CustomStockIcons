@@ -1,7 +1,7 @@
 ﻿{
   "name": "Custom_Stock_Icons",
   "version_number": "1.0.0",
-  "website_url": "https://github.com/DeadlyKitten/NickVoiceMod",
+  "website_url": "https://github.com/DeadlyKitten/CustomStockIcons",
   "description": "This mod allows you to add custom stock icons to all characters!",
   "dependencies": [
     "BepInEx-BepInExPack_NASB-5.4.16"
