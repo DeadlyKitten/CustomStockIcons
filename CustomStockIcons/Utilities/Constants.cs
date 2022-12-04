@@ -36,7 +36,10 @@ namespace CustomStockIcons.Utilities
             { "helga", "char_rival" },
             { "danny phantom", "char_plasma" },
             { "danny", "char_plasma" },
-            { "oblina", "char_snake" }
+            { "oblina", "char_snake" },
+            { "jenny", "char_neo" },
+            { "xj-9", "char_neo" },
+            { "jenny wakeman", "char_neo" }
         };
 
         internal static readonly string[] characterIds =
@@ -60,7 +63,37 @@ namespace CustomStockIcons.Utilities
             "char_reporter",
             "char_rival",
             "char_snake",
-            "char_star"
+            "char_star",
+            "char_orb",
+            "char_cheese",
+            "char_neo"
+        };
+
+        internal static readonly string[] skinIds =
+        {
+            "char_alien_human",
+            "char_apple_costume_hat",
+            "char_athlete_custom",
+            "char_chimera_party",
+            "char_clay_custom",
+            "char_diver_basketball",
+            "char_duo_christmas",
+            "char_goth_glasses",
+            "char_hero_custom",
+            "char_kite_hat",
+            "char_mascot_pink",
+            "char_moon_ink",
+            "char_narrator_hat",
+            "char_pizza_ink",
+            "char_plasma_custom",
+            "char_rascal_hat",
+            "char_reporter_custom_green",
+            "char_rival_christmas",
+            "char_snake_snorkel",
+            "char_star_cowboy",
+            "char_orb_bib",
+            "char_cheese_custom",
+            "char_neo_custom"
         };
     }
 }

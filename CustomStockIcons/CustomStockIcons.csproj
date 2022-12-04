@@ -1,11 +1,37 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <LangVersion>8.0</LangVersion>
+    <Version>1.3.1</Version>
+    <AssemblyVersion>1.3.1.0</AssemblyVersion>
+    <FileVersion>1.3.1.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Backgrounds\char_alien.png" />
+    <None Remove="Resources\Backgrounds\char_apple.png" />
+    <None Remove="Resources\Backgrounds\char_athlete.png" />
+    <None Remove="Resources\Backgrounds\char_cheese.png" />
+    <None Remove="Resources\Backgrounds\char_chimera.png" />
+    <None Remove="Resources\Backgrounds\char_clay.png" />
+    <None Remove="Resources\Backgrounds\char_diver.png" />
+    <None Remove="Resources\Backgrounds\char_duo.png" />
+    <None Remove="Resources\Backgrounds\char_goth.png" />
+    <None Remove="Resources\Backgrounds\char_hero.png" />
+    <None Remove="Resources\Backgrounds\char_kite.png" />
+    <None Remove="Resources\Backgrounds\char_mascot.png" />
+    <None Remove="Resources\Backgrounds\char_moon.png" />
+    <None Remove="Resources\Backgrounds\char_narrator.png" />
+    <None Remove="Resources\Backgrounds\char_neo.png" />
+    <None Remove="Resources\Backgrounds\char_orb.png" />
+    <None Remove="Resources\Backgrounds\char_pizza.png" />
+    <None Remove="Resources\Backgrounds\char_plasma.png" />
+    <None Remove="Resources\Backgrounds\char_rascal.png" />
+    <None Remove="Resources\Backgrounds\char_reporter.png" />
+    <None Remove="Resources\Backgrounds\char_rival.png" />
+    <None Remove="Resources\Backgrounds\char_snake.png" />
+    <None Remove="Resources\Backgrounds\char_star.png" />
     <None Remove="Resources\char_alien.png" />
     <None Remove="Resources\char_apple.png" />
     <None Remove="Resources\char_athlete.png" />
@@ -26,29 +52,124 @@
     <None Remove="Resources\char_rival.png" />
     <None Remove="Resources\char_snake.png" />
     <None Remove="Resources\char_star.png" />
+    <None Remove="Resources\Stock Icons\char_alien_human.png" />
+    <None Remove="Resources\Stock Icons\char_apple_costume_hat.png" />
+    <None Remove="Resources\Stock Icons\char_athlete_custom.png" />
+    <None Remove="Resources\Stock Icons\char_cheese.png" />
+    <None Remove="Resources\Stock Icons\char_cheese_custom.png" />
+    <None Remove="Resources\Stock Icons\char_chimera_party.png" />
+    <None Remove="Resources\Stock Icons\char_clay_custom.png" />
+    <None Remove="Resources\Stock Icons\char_diver_basketball.png" />
+    <None Remove="Resources\Stock Icons\char_duo_christmas.png" />
+    <None Remove="Resources\Stock Icons\char_goth_glasses.png" />
+    <None Remove="Resources\Stock Icons\char_hero_custom.png" />
+    <None Remove="Resources\Stock Icons\char_kite_hat.png" />
+    <None Remove="Resources\Stock Icons\char_mascot_pink.png" />
+    <None Remove="Resources\Stock Icons\char_moon_ink.png" />
+    <None Remove="Resources\Stock Icons\char_narrator_hat.png" />
+    <None Remove="Resources\Stock Icons\char_neo.png" />
+    <None Remove="Resources\Stock Icons\char_neo_custom.png" />
+    <None Remove="Resources\Stock Icons\char_orb.png" />
+    <None Remove="Resources\Stock Icons\char_orb_bib.png" />
+    <None Remove="Resources\Stock Icons\char_pizza_ink.png" />
+    <None Remove="Resources\Stock Icons\char_plasma_custom.png" />
+    <None Remove="Resources\Stock Icons\char_rascal_hat.png" />
+    <None Remove="Resources\Stock Icons\char_reporter_custom_green.png" />
+    <None Remove="Resources\Stock Icons\char_rival_christmas.png" />
+    <None Remove="Resources\Stock Icons\char_snake_snorkel.png" />
+    <None Remove="Resources\Stock Icons\char_star_cowboy.png" />
+    <None Remove="Resources\Stock Icons\skin_apple_costume_hat.png" />
+    <None Remove="Resources\Stock Icons\skin_athlete_custom.png" />
+    <None Remove="Resources\Stock Icons\skin_chimera_party.png" />
+    <None Remove="Resources\Stock Icons\skin_clay_custom.png" />
+    <None Remove="Resources\Stock Icons\skin_diver_basketball.png" />
+    <None Remove="Resources\Stock Icons\skin_duo_christmas.png" />
+    <None Remove="Resources\Stock Icons\skin_goth_glasses.png" />
+    <None Remove="Resources\Stock Icons\skin_hero_custom.png" />
+    <None Remove="Resources\Stock Icons\skin_kite_hat.png" />
+    <None Remove="Resources\Stock Icons\skin_mascot_pink.png" />
+    <None Remove="Resources\Stock Icons\skin_moon_ink.png" />
+    <None Remove="Resources\Stock Icons\skin_narrator_hat.png" />
+    <None Remove="Resources\Stock Icons\skin_orb_bib.png" />
+    <None Remove="Resources\Stock Icons\skin_pizza_ink.png" />
+    <None Remove="Resources\Stock Icons\skin_plasma_custom.png" />
+    <None Remove="Resources\Stock Icons\skin_rascal_hat.png" />
+    <None Remove="Resources\Stock Icons\skin_reporter_green.png" />
+    <None Remove="Resources\Stock Icons\skin_rival_christmas.png" />
+    <None Remove="Resources\Stock Icons\skin_snake_snorkel.png" />
+    <None Remove="Resources\Stock Icons\skin_star_cowboy.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Resources\char_alien.png" />
-    <EmbeddedResource Include="Resources\char_apple.png" />
-    <EmbeddedResource Include="Resources\char_athlete.png" />
-    <EmbeddedResource Include="Resources\char_chimera.png" />
-    <EmbeddedResource Include="Resources\char_clay.png" />
-    <EmbeddedResource Include="Resources\char_diver.png" />
-    <EmbeddedResource Include="Resources\char_duo.png" />
-    <EmbeddedResource Include="Resources\char_goth.png" />
-    <EmbeddedResource Include="Resources\char_hero.png" />
-    <EmbeddedResource Include="Resources\char_kite.png" />
-    <EmbeddedResource Include="Resources\char_mascot.png" />
-    <EmbeddedResource Include="Resources\char_moon.png" />
-    <EmbeddedResource Include="Resources\char_narrator.png" />
-    <EmbeddedResource Include="Resources\char_pizza.png" />
-    <EmbeddedResource Include="Resources\char_plasma.png" />
-    <EmbeddedResource Include="Resources\char_rascal.png" />
-    <EmbeddedResource Include="Resources\char_reporter.png" />
-    <EmbeddedResource Include="Resources\char_rival.png" />
-    <EmbeddedResource Include="Resources\char_snake.png" />
-    <EmbeddedResource Include="Resources\char_star.png" />
+    <EmbeddedResource Include="Resources\Backgrounds\char_alien.png" />
+    <EmbeddedResource Include="Resources\Backgrounds\char_apple.png" />
+    <EmbeddedResource Include="Resources\Backgrounds\char_athlete.png" />
+    <EmbeddedResource Include="Resources\Backgrounds\char_cheese.png" />
+    <EmbeddedResource Include="Resources\Backgrounds\char_chimera.png" />
+    <EmbeddedResource Include="Resources\Backgrounds\char_clay.png" />
+    <EmbeddedResource Include="Resources\Backgrounds\char_diver.png" />
+    <EmbeddedResource Include="Resources\Backgrounds\char_duo.png" />
+    <EmbeddedResource Include="Resources\Backgrounds\char_goth.png" />
+    <EmbeddedResource Include="Resources\Backgrounds\char_hero.png" />
+    <EmbeddedResource Include="Resources\Backgrounds\char_kite.png" />
+    <EmbeddedResource Include="Resources\Backgrounds\char_mascot.png" />
+    <EmbeddedResource Include="Resources\Backgrounds\char_moon.png" />
+    <EmbeddedResource Include="Resources\Backgrounds\char_narrator.png" />
+    <EmbeddedResource Include="Resources\Backgrounds\char_neo.png" />
+    <EmbeddedResource Include="Resources\Backgrounds\char_orb.png" />
+    <EmbeddedResource Include="Resources\Backgrounds\char_pizza.png" />
+    <EmbeddedResource Include="Resources\Backgrounds\char_plasma.png" />
+    <EmbeddedResource Include="Resources\Backgrounds\char_rascal.png" />
+    <EmbeddedResource Include="Resources\Backgrounds\char_reporter.png" />
+    <EmbeddedResource Include="Resources\Backgrounds\char_rival.png" />
+    <EmbeddedResource Include="Resources\Backgrounds\char_snake.png" />
+    <EmbeddedResource Include="Resources\Backgrounds\char_star.png" />
+    <EmbeddedResource Include="Resources\Stock Icons\char_alien.png" />
+    <EmbeddedResource Include="Resources\Stock Icons\char_alien_human.png" />
+    <EmbeddedResource Include="Resources\Stock Icons\char_apple.png" />
+    <EmbeddedResource Include="Resources\Stock Icons\char_apple_costume_hat.png" />
+    <EmbeddedResource Include="Resources\Stock Icons\char_athlete.png" />
+    <EmbeddedResource Include="Resources\Stock Icons\char_athlete_custom.png" />
+    <EmbeddedResource Include="Resources\Stock Icons\char_cheese.png" />
+    <EmbeddedResource Include="Resources\Stock Icons\char_cheese_custom.png" />
+    <EmbeddedResource Include="Resources\Stock Icons\char_chimera.png" />
+    <EmbeddedResource Include="Resources\Stock Icons\char_chimera_party.png" />
+    <EmbeddedResource Include="Resources\Stock Icons\char_clay.png" />
+    <EmbeddedResource Include="Resources\Stock Icons\char_clay_custom.png" />
+    <EmbeddedResource Include="Resources\Stock Icons\char_diver.png" />
+    <EmbeddedResource Include="Resources\Stock Icons\char_diver_basketball.png" />
+    <EmbeddedResource Include="Resources\Stock Icons\char_duo.png" />
+    <EmbeddedResource Include="Resources\Stock Icons\char_duo_christmas.png" />
+    <EmbeddedResource Include="Resources\Stock Icons\char_goth.png" />
+    <EmbeddedResource Include="Resources\Stock Icons\char_goth_glasses.png" />
+    <EmbeddedResource Include="Resources\Stock Icons\char_hero.png" />
+    <EmbeddedResource Include="Resources\Stock Icons\char_hero_custom.png" />
+    <EmbeddedResource Include="Resources\Stock Icons\char_kite.png" />
+    <EmbeddedResource Include="Resources\Stock Icons\char_kite_hat.png" />
+    <EmbeddedResource Include="Resources\Stock Icons\char_mascot.png" />
+    <EmbeddedResource Include="Resources\Stock Icons\char_mascot_pink.png" />
+    <EmbeddedResource Include="Resources\Stock Icons\char_moon.png" />
+    <EmbeddedResource Include="Resources\Stock Icons\char_moon_ink.png" />
+    <EmbeddedResource Include="Resources\Stock Icons\char_narrator.png" />
+    <EmbeddedResource Include="Resources\Stock Icons\char_narrator_hat.png" />
+    <EmbeddedResource Include="Resources\Stock Icons\char_neo.png" />
+    <EmbeddedResource Include="Resources\Stock Icons\char_neo_custom.png" />
+    <EmbeddedResource Include="Resources\Stock Icons\char_orb.png" />
+    <EmbeddedResource Include="Resources\Stock Icons\char_orb_bib.png" />
+    <EmbeddedResource Include="Resources\Stock Icons\char_pizza.png" />
+    <EmbeddedResource Include="Resources\Stock Icons\char_pizza_ink.png" />
+    <EmbeddedResource Include="Resources\Stock Icons\char_plasma.png" />
+    <EmbeddedResource Include="Resources\Stock Icons\char_plasma_custom.png" />
+    <EmbeddedResource Include="Resources\Stock Icons\char_rascal.png" />
+    <EmbeddedResource Include="Resources\Stock Icons\char_rascal_hat.png" />
+    <EmbeddedResource Include="Resources\Stock Icons\char_reporter.png" />
+    <EmbeddedResource Include="Resources\Stock Icons\char_reporter_custom_green.png" />
+    <EmbeddedResource Include="Resources\Stock Icons\char_rival.png" />
+    <EmbeddedResource Include="Resources\Stock Icons\char_rival_christmas.png" />
+    <EmbeddedResource Include="Resources\Stock Icons\char_snake.png" />
+    <EmbeddedResource Include="Resources\Stock Icons\char_snake_snorkel.png" />
+    <EmbeddedResource Include="Resources\Stock Icons\char_star.png" />
+    <EmbeddedResource Include="Resources\Stock Icons\char_star_cowboy.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -60,6 +181,9 @@
     </Reference>
     <Reference Include="BepInEx">
       <HintPath>Refs\BepInEx.dll</HintPath>
+    </Reference>
+    <Reference Include="MenuCore">
+      <HintPath>..\..\..\..\..\..\..\Program Files\Steam\steamapps\common\Nickelodeon All-Star Brawl\BepInEx\plugins\MenuCore.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine">
       <HintPath>Refs\UnityEngine.dll</HintPath>
@@ -80,7 +204,9 @@
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="if $(ConfigurationName) == Debug (&#xD;&#xA;copy /Y &quot;$(TargetPath)&quot; &quot;C:\Program Files\Steam\steamapps\common\Nickelodeon All-Star Brawl\BepInEx\plugins&quot;&#xD;&#xA;)" />
+    <Exec Command="copy /Y &quot;$(TargetPath)&quot; &quot;C:\Program Files\Steam\steamapps\common\Nickelodeon All-Star Brawl\BepInEx\plugins&quot;&#xD;&#xA;" />
   </Target>
+
+  <ProjectExtensions><VisualStudio><UserProperties external_4manifest_1json__JsonSchema="https://https://json.schemastore.org/package.manifest.json" /></VisualStudio></ProjectExtensions>
 
 </Project>

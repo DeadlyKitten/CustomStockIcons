@@ -8,26 +8,26 @@ using UnityEngine;
 
 namespace CustomStockIcons.Managers
 {
-    static class IconManager
+    static class BackgroundManager
     {
-        static readonly Dictionary<string, Texture2D> iconDict = new Dictionary<string, Texture2D>();
+        static readonly Dictionary<string, Texture2D> backgroundDict = new Dictionary<string, Texture2D>();
 
-        static readonly string folder = Path.Combine(Paths.BepInExRootPath, "Custom Icons", "Stock Icons");
+        static readonly string folder = Path.Combine(Paths.BepInExRootPath, "Custom Icons", "Backgrounds");
         static readonly List<string> allowedFileTypes = new List<string> { ".png", ".jpg" };
 
         public static void Init()
         {
             Directory.CreateDirectory(folder);
-            LoadAllIcons();
+            LoadAllBackgrounds();
         }
 
         public static void Refresh()
         {
-            iconDict.Clear();
-            LoadAllIcons();
+            backgroundDict.Clear();
+            LoadAllBackgrounds();
         }
 
-        static void LoadAllIcons()
+        static void LoadAllBackgrounds()
         {
             var stopwatch = new System.Diagnostics.Stopwatch();
             stopwatch.Start();
@@ -36,36 +36,36 @@ namespace CustomStockIcons.Managers
             {
                 var texture = LoadImageFromFile(file);
                 var id = TranslateCharacterNameToId(Path.GetFileNameWithoutExtension(file));
-                if (iconDict.TryGetValue(id.ToLower(), out _))
+                if (backgroundDict.TryGetValue(id.ToLower(), out _))
                 {
                     var character = Constants.nameToId.FirstOrDefault(x => x.Value == id.ToLower()).Key;
-                    Plugin.LogWarning($"Multiple stock icons found for {character ?? id.ToLower()}! Ignoring {Path.GetFileName(file)}");
+                    Plugin.LogWarning($"Multiple backgrounds found for {character ?? id.ToLower()}! Ignoring {Path.GetFileName(file)}");
                     continue;
                 }
-                iconDict.Add(id.ToLower(), texture);
+                backgroundDict.Add(id.ToLower(), texture);
             }
 
             if (!Plugin.useVanillaIcons.Value)
             {
-                foreach (var characterId in Constants.characterIds.Concat(Constants.skinIds))
+                foreach (var characterId in Constants.characterIds)
                 {
-                    if (!iconDict.TryGetValue(characterId, out _))
+                    if (!backgroundDict.TryGetValue(characterId, out _))
                     {
-                        var resourcePath = $"CustomStockIcons.Resources.Stock_Icons.{characterId}.png";
+                        var resourcePath = $"CustomStockIcons.Resources.Backgrounds.{characterId}.png";
                         var texture = LoadImageFromEmbeddedResource(resourcePath);
                         if (texture)
-                            iconDict.Add(characterId, texture);
+                            backgroundDict.Add(characterId, texture);
                         else
-                            Plugin.LogWarning($"Icon not found for {characterId}");
+                            Plugin.LogWarning($"Background not found for {characterId}");
                     }
                 }
             }
 
             stopwatch.Stop();
-            Plugin.LogInfo($"Loaded {iconDict.Keys.Count} icon{(iconDict.Keys.Count == 1 ? "" : "s")} in {stopwatch.ElapsedMilliseconds} ms.");
+            Plugin.LogInfo($"Loaded {backgroundDict.Keys.Count} background{(backgroundDict.Keys.Count == 1 ? "" : "s")} in {stopwatch.ElapsedMilliseconds} ms.");
         }
 
-        internal static bool TryGetTextureFromCharacterId(string id, out Texture2D texture) => iconDict.TryGetValue(id, out texture);
+        internal static bool TryGetTextureFromCharacterId(string id, out Texture2D texture) => backgroundDict.TryGetValue(id, out texture);
 
         internal static string TranslateCharacterNameToId(string name)
         {

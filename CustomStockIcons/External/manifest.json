@@ -1,9 +1,10 @@
 ﻿{
   "name": "Custom_Stock_Icons",
-  "version_number": "1.0.0",
+  "version_number": "1.3.1",
   "website_url": "https://github.com/DeadlyKitten/CustomStockIcons",
   "description": "This mod allows you to add custom stock icons to all characters!",
   "dependencies": [
-    "BepInEx-BepInExPack_NASB-5.4.16"
+    "BepInEx-BepInExPack_NASB-5.4.16",
+    "Steven-SlimeModdingUtilities-1.0.0"
   ]
 }
