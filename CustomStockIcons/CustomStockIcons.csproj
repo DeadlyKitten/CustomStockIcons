@@ -182,9 +182,6 @@
     <Reference Include="BepInEx">
       <HintPath>Refs\BepInEx.dll</HintPath>
     </Reference>
-    <Reference Include="MenuCore">
-      <HintPath>..\..\..\..\..\..\..\Program Files\Steam\steamapps\common\Nickelodeon All-Star Brawl\BepInEx\plugins\MenuCore.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine">
       <HintPath>Refs\UnityEngine.dll</HintPath>
     </Reference>
