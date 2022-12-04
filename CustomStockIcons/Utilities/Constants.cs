@@ -39,7 +39,10 @@ namespace CustomStockIcons.Utilities
             { "oblina", "char_snake" },
             { "jenny", "char_neo" },
             { "xj-9", "char_neo" },
-            { "jenny wakeman", "char_neo" }
+            { "jenny wakeman", "char_neo" },
+            { "Hugh Neutron", "char_pie" },
+            { "Hugh", "char_pie" },
+            { "Rocko", "char_squirrel" }
         };
 
         internal static readonly string[] characterIds =
@@ -66,7 +69,9 @@ namespace CustomStockIcons.Utilities
             "char_star",
             "char_orb",
             "char_cheese",
-            "char_neo"
+            "char_neo",
+            "char_pie",
+            "char_squirrel"
         };
 
         internal static readonly string[] skinIds =
